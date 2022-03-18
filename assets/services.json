@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sonic-progress-340114",
+  "private_key_id": "f0730655ba73060e377367198c4d98d8cb0f5e55",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDqSGS2lvhVujra\nPhjjGdQSeSO5UfQwly2Pubcvg1tD//Rk3I3zoxMU4m9fIjj1mR2zz2nhfcX+0f3W\nvJvRrqdP/CoX2xI5dKxQ0wZryHSVTlEiNhkhYtrJAeDdNZXKldMzi9yQG1s/cd8x\n0gkT3ar8MC9drdTE+e93KS2EeXjpDb0+jbaAVggD1ZDmisKWl6UrYUy9DB21KM9A\nRMgP2EwJUjlvW202CL9Ty3gFbNHqYdnInC9xaGZoYPIYRau5tDQDDhjjWdWhfFfS\nqYIbUU1oIaIunAWE9mSydIWWLqsdlg9SvXXPfhRqqnDDPPlmoXWXxfr7hbRL1bnU\n3AkBTsThAgMBAAECggEABvcF/3j3gweZTk8ASxLD1OoYX3RfRRPe0oyxNHlm54ZJ\ndrd+hNq5QNVb0uvf3kqiBmweeAoBg9+Bo2D8ujwYqe5o4J1Y/6+cm9PaN1lrQIZm\nhRTZ+b3IRqeGpCzpT2+AKuJ349TcXpjSYNcfVqGFaXU+mJNdZZ8PORoBShSZEpyR\nC177AJu4ZhJ/qUAM5RvYWnHP2mqj59H/gSw1dMnqWemy3N14IhUKBIoJYpyptjMz\n2bNHFU6RQ9WYy2NhabULPxGijZrqrPLerzTMtDZ+Yi8lzhR/EGRdtkqo42laDmOB\n+GYkmc2vdLAL245SBtCbEVbtwv2gBbnrs8pjoe3sUQKBgQD/7of1CJB39CClX3EG\nF2thOLvGjl+Q5B0bJY8NRKLQuT+g5D/YJXrDvU1/X35hZVUZPUz3CQGkf4lrkloV\nKYWUKtaQyhJA+GWSsibKULdnmYrsf3sCGEyVFiXftlC84ZYz1C66+eWZ2qJ/3bjG\np2cN1x9QUKiKLFSBuYumsnjitQKBgQDqWGJ4mRhArsBMfGhsJm2jm9Em2Pves80d\n/FoFeEtGVvFATb8rIdUN0cme3UkwxIZJCCk7ZZm1Bh4Aak3w6D5xDaqNJdTslL0e\no+3Q7g06NFl7OjxpfR5jTIu5AUDaVx+9MsWb4Ene8VQIxmV2h1ikM317rsFDb552\nu22KsRbY/QKBgQCetYwILvxv9qs8Alizn1hOnQENG4M19c/64qq4XqTc7NQBcSoK\nXwunUMA7Sbu0qENCeJo+443qNdDBLavBTdNxU7NlbHovYhqTAvk9IxrpGvVkvZVJ\nckojde2cspGU4AvmLiGgf5GbfFKjGpsYTf2BPrNDehFaRi1NmQN6J1kBtQKBgF4d\nQO7ODT9s7y3IiOdmR4H9gfHoEr9N1oLEZiLsPM7y+9CnaK8Z10bFigOTO2Gqi4Op\nE2YXV7Or0UC5cLPfkbQ1mNk26FxbH9i+XTQbZpSJkaY7rSdwaFPY2gRizHjjpIuH\naHVBjmlK4kTj6LvBf4fyZeLWPCepHCry+vtIQ7TBAoGAX/Gy0uCyl91zs4iQE8Kb\n+AkA827mg1YwOezH6MVNnSKhPYZVx9CBNhrVz3+Ziae+qxW3IG6wBCOXq/lX9y0+\nYBt7cvFj3Iq3baaxOk2OZt7ZHJZQX173qEwZtZ4g4AJvZyipEygFfK/6nZVsCF5W\ndnnaCjNfmeDQF3knqO749ME=\n-----END PRIVATE KEY-----\n",
+  "client_email": "food20@sonic-progress-340114.iam.gserviceaccount.com",
+  "client_id": "110059404274113778490",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/food20%40sonic-progress-340114.iam.gserviceaccount.com"
+}
