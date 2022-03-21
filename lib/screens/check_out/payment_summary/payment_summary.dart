@@ -1,16 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:food_app/config/colors.dart';
 import 'package:food_app/models/delivery_address_model.dart';
 import 'package:food_app/providers/review_cart_provider.dart';
 import 'package:food_app/screens/check_out/delivery_details/single_delivery_item.dart';
 import 'package:food_app/screens/check_out/payment_summary/order_item.dart';
-import 'package:food_app/screens/ssl_commerz.dart';
 import 'package:provider/provider.dart';
+import '../../../models/review_cart_model.dart';
 
 class PaymentSummary extends StatefulWidget {
   final DeliveryAddressModel deliverAddressList;
   // ignore: use_key_in_widget_constructors
-  const PaymentSummary({required this.deliverAddressList});
+  const PaymentSummary({
+    required this.deliverAddressList,
+  });
 
   @override
   _PaymentSummaryState createState() => _PaymentSummaryState();
@@ -23,32 +27,46 @@ enum AddressTypes {
 
 class _PaymentSummaryState extends State<PaymentSummary> {
   var myType = AddressTypes.Home;
-
+  late ReviewCartProvider reviewCartProvider;
+  late String cartId;
+  late double totalPrice;
+  late String cartImage;
+  late ReviewCartModel e;
   @override
   Widget build(BuildContext context) {
     ReviewCartProvider reviewCartProvider = Provider.of(context);
     reviewCartProvider.getReviewCartData();
 
-    double discount = 30/100;
-    double discountValue=0;
-    double shippingChanrge = 3.7;
-    double total=0;
     double totalPrice = reviewCartProvider.getTotalPrice();
+
+    void order() {
+      for (var element in reviewCartProvider.getReviewCartDataList) {
+        reviewCartProvider.addOrderData(cartId: element.cartId, done: true);
+        Fluttertoast.showToast(
+            msg: "Order are recorded",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    }
+
+    double discount = 30 / 100;
+    double discountValue = 0;
+    double shippingChanrge = 3.7;
+    double total = 0;
     if (totalPrice > 300) {
       setState(() {
         discountValue = discount * totalPrice;
         total = totalPrice - discountValue + shippingChanrge;
-      }
-
-      );
-
-    }
-    else {
+      });
+    } else {
       setState(() {
         discountValue = 0;
         total = reviewCartProvider.getTotalPrice() + shippingChanrge;
       });
-
     }
 
     return Scaffold(
@@ -82,15 +100,22 @@ class _PaymentSummaryState extends State<PaymentSummary> {
               //         ),
               //       )
               //     : Container();
-            
             },
             child: TextButton(
-              onPressed: (){
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const Payment(),
-                  ),
-                );
+              onPressed: () {
+                order();
+
+                // showDialog<String>(
+                //     context: context,
+                //     builder: (BuildContext context) => const AlertDialog(
+                //           title: Text('Are you sure?'),
+                //           content: Text('AlertDialog description'),
+                //         ));
+                // Navigator.of(context).push(
+                //   MaterialPageRoute(
+                //     builder: (context) => const Payment(),
+                //   ),
+                // );
               },
               child: Text(
                 "Pleace Order",
@@ -134,8 +159,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                       e: e,
                     );
                   }).toList(),
-                  title: Text(
-                      "Order Items ${reviewCartProvider.getReviewCartDataList.length}"),
+                  title: const Text("Order Items"),
                 ),
                 const Divider(),
                 ListTile(
@@ -187,7 +211,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                   value: AddressTypes.Home,
                   groupValue: myType,
                   title: const Text("Home"),
-                  onChanged: ( value) {
+                  onChanged: (value) {
                     setState(() {
                       myType = AddressTypes.Home;
                     });
@@ -201,9 +225,9 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                   value: AddressTypes.OnlinePayment,
                   groupValue: myType,
                   title: const Text("OnlinePayment"),
-                  onChanged: ( value) {
+                  onChanged: (value) {
                     setState(() {
-                      myType=AddressTypes.OnlinePayment;
+                      myType = AddressTypes.OnlinePayment;
                     });
                   },
                   secondary: Icon(

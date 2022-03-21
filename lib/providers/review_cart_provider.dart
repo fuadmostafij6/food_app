@@ -26,6 +26,24 @@ class ReviewCartProvider with ChangeNotifier {
         "cartQuantity": cartQuantity,
         "cartUnit": cartUnit,
         "isAdd": true,
+        "order": false,
+      },
+    );
+  }
+
+  void addOrderData({
+    required String cartId,
+    required bool done,
+  }) async {
+    FirebaseFirestore.instance
+        .collection("Order")
+        .doc(FirebaseAuth.instance.currentUser?.uid)
+        .collection("Order")
+        .doc(cartId)
+        .set(
+      {
+        "cartId": cartId,
+        "done": done,
       },
     );
   }
@@ -90,6 +108,10 @@ class ReviewCartProvider with ChangeNotifier {
       total += element.cartPrice * element.cartQuantity;
     });
     return total;
+  }
+
+  Order() {
+    reviewCartDataList.forEach((element) {});
   }
 
 ////////////// ReviCartDeleteFunction ////////////
